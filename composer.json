@@ -1,0 +1,44 @@
+{
+  "name": "edwrodrig/exception_with_data",
+  "description": "Una nueva asombrosa biblioteca Composer",
+  "authors": [
+    {
+      "name": "Edwin Rodríguez-León",
+      "email": "edwrodrig@gmail.com",
+      "homepage": "http://www.edwin.cl",
+      "role": "Developer"
+    }
+  ],
+  "license": "MIT",
+  "minimum-stability": "stable",
+  "require": {
+    "php": "^7.4"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^8.5"
+  },
+  "autoload": {
+    "psr-4": {
+      "edwrodrig\\exception_with_data\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "test\\edwrodrig\\exception_with_data\\": "tests/"
+    }
+  },
+  "archive": {
+    "exclude": [
+      "/.git",
+      "/.idea",
+      "/examples",
+      "/scripts",
+      "/tests",
+      "/.gitignore",
+      "/.phpunit.result.cache",
+      "/phpunit.xml.dist",
+      "/README.md",
+      "/.travis.yml"
+    ]
+  }
+}
