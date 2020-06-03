@@ -1,6 +1,6 @@
 {
   "name": "edwrodrig/exception_with_data",
-  "description": "Una nueva asombrosa biblioteca Composer",
+  "description": "Una clase Exception que soporta un array como data",
   "authors": [
     {
       "name": "Edwin Rodríguez-León",
