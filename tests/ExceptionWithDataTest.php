@@ -1,9 +1,9 @@
 <?php
 declare(strict_types=1);
 
-namespace test\edwrodrig\exception_with_data;
+namespace test\labo86\exception_with_data;
 
-use edwrodrig\exception_with_data\ExceptionWithData;
+use labo86\exception_with_data\ExceptionWithData;
 use PHPUnit\Framework\TestCase;
 
 class ExceptionWithDataTest extends TestCase

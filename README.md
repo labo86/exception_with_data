@@ -1,18 +1,18 @@
-edwrodrig\exception_with_data
+labo86\exception_with_data
 ========
 Una clase Exception que soporta un array como data
 
-[![Latest Stable Version](https://poser.pugx.org/edwrodrig/exception_with_data/v/stable)](https://packagist.org/packages/edwrodrig/exception_with_data)
-[![Total Downloads](https://poser.pugx.org/edwrodrig/exception_with_data/downloads)](https://packagist.org/packages/edwrodrig/exception_with_data)
-[![License](https://poser.pugx.org/edwrodrig/exception_with_data/license)](https://github.com/edwrodrig/exception_with_data/blob/master/LICENSE)
-[![Build Status](https://travis-ci.org/edwrodrig/exception_with_data.svg?branch=master)](https://travis-ci.org/edwrodrig/exception_with_data)
-[![codecov.io Code Coverage](https://codecov.io/gh/edwrodrig/exception_with_data/branch/master/graph/badge.svg)](https://codecov.io/github/edwrodrig/exception_with_data?branch=master)
-[![Code Climate](https://codeclimate.com/github/edwrodrig/exception_with_data/badges/gpa.svg)](https://codeclimate.com/github/edwrodrig/exception_with_data)
+[![Latest Stable Version](https://poser.pugx.org/labo86/exception_with_data/v/stable)](https://packagist.org/packages/labo86/exception_with_data)
+[![Total Downloads](https://poser.pugx.org/labo86/exception_with_data/downloads)](https://packagist.org/packages/labo86/exception_with_data)
+[![License](https://poser.pugx.org/labo86/exception_with_data/license)](https://github.com/labo86/exception_with_data/blob/master/LICENSE)
+[![Build Status](https://travis-ci.org/labo86/exception_with_data.svg?branch=master)](https://travis-ci.org/labo86/exception_with_data)
+[![codecov.io Code Coverage](https://codecov.io/gh/labo86/exception_with_data/branch/master/graph/badge.svg)](https://codecov.io/github/labo86/exception_with_data?branch=master)
+[![Code Climate](https://codeclimate.com/github/labo86/exception_with_data/badges/gpa.svg)](https://codeclimate.com/github/labo86/exception_with_data)
 ![Hecho en Chile](https://img.shields.io/badge/country-Chile-red)
 
 ## Uso 
 ```php
-use \edwrodrig\exception_with_data\ExceptionWithData;
+use \labo86\exception_with_data\ExceptionWithData;
 
 try {
     throw new ExceptionWithData(
@@ -50,11 +50,11 @@ Ojalá se agregue un nuevo tipo de excepción en el núcleo de PHP.
 
 ## Instalación
 ```
-composer require edwrodrig/exception
+composer require labo86/exception_with_data
 ```
 
 ## Información de mi máquina de desarrollo
-Salida de [system_info.sh](https://github.com/edwrodrig/exception_with_data/blob/master/scripts/system_info.sh)
+Salida de [system_info.sh](https://github.com/labo86/exception_with_data/blob/master/scripts/system_info.sh)
 ```
 + hostnamectl
 + grep -e 'Operating System:' -e Kernel:

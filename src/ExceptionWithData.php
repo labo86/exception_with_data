@@ -1,13 +1,13 @@
 <?php
 declare(strict_types=1);
 
-namespace edwrodrig\exception_with_data;
+namespace labo86\exception_with_data;
 
 use Exception;
 use Throwable;
 
 /**
- * @package edwrodrig\exception_with_data
+ * @package labo86\exception_with_data
  */
 class ExceptionWithData extends Exception
 {

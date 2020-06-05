@@ -1,5 +1,5 @@
 {
-  "name": "edwrodrig/exception_with_data",
+  "name": "labo86/exception_with_data",
   "description": "Una clase Exception que soporta un array como data",
   "authors": [
     {
@@ -19,12 +19,12 @@
   },
   "autoload": {
     "psr-4": {
-      "edwrodrig\\exception_with_data\\": "src/"
+      "labo86\\exception_with_data\\": "src/"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "test\\edwrodrig\\exception_with_data\\": "tests/"
+      "test\\labo86\\exception_with_data\\": "tests/"
     }
   },
   "archive": {
