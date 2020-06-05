@@ -24,7 +24,7 @@
   },
   "autoload-dev": {
     "psr-4": {
-      "test\\labo86\\exception_with_data\\": "tests/"
+      "test\\labo86\\exception_with_data\\": "test/"
     }
   },
   "archive": {
@@ -33,7 +33,7 @@
       "/.idea",
       "/examples",
       "/scripts",
-      "/tests",
+      "/test",
       "/.gitignore",
       "/.phpunit.result.cache",
       "/phpunit.xml.dist",
