@@ -45,8 +45,13 @@ try {
 }
 ```
 
-Elegí un nombre extraño para la clase para demostrar que ren realidad quiero que esto se cambie de alguna forma.
+Elegí un nombre extraño para la clase para demostrar que en realidad quiero que esto se cambie de alguna forma.
 Ojalá se agregue un nuevo tipo de excepción en el núcleo de PHP.
+
+Ahora además se consideran nuevos manejos y utilidades como:
+ - serialización [Util::toArray()](https://github.com/labo86/exception_with_data/blob/master/src/Util.php)
+ - relanzamiento de excepciones [Util::rethrow()](https://github.com/labo86/exception_with_data/blob/master/src/Util.php)
+ - captura de excepciones para iteraciones [Util::foreachTry()](https://github.com/labo86/exception_with_data/blob/master/src/Util.php)
 
 ## Instalación
 ```
