@@ -15,7 +15,18 @@ class ExceptionForFrontEndTest extends TestCase
 
         $exp_for_front_end = ExceptionForFrontEnd::normalize($exception);
 
-        $this->assertEquals("some error has occurred", $exp_for_front_end->getMessage());
+        $this->assertEquals("GENERIC_ERROR", $exp_for_front_end->getMessage());
+        $this->assertSame($exception, $exp_for_front_end->getPrevious());
+        $this->assertNotEquals($exception, $exp_for_front_end);
+
+    }
+
+    public function testNormalizeOtherWithMessage() {
+        $exception = new Exception("exception");
+
+        $exp_for_front_end = ExceptionForFrontEnd::normalize($exception, "OTHER_ERROR");
+
+        $this->assertEquals("OTHER_ERROR", $exp_for_front_end->getMessage());
         $this->assertSame($exception, $exp_for_front_end->getPrevious());
         $this->assertNotEquals($exception, $exp_for_front_end);
 

@@ -44,6 +44,11 @@ class ExceptionWithData extends Exception
         return $this->data;
     }
 
+    /**
+     * Ver {@see Util::toArray()} para el detalle del contenido del arreglo
+     * @param bool $file_data
+     * @return array
+     */
     public function toArray(bool $file_data = true) : array {
         $array_data = Util::toArrayBasic($this, $file_data);
 
