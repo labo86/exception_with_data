@@ -24,7 +24,38 @@ class UtilTest extends TestCase
 
         } catch (ThrowableList $exception) {
             $this->assertEquals([
-                'm' => "some exceptions thrown during try execution",
+                'm' => "GENERIC_ERROR_LIST",
+                'd' => [
+                    "element_list" => ["hello", "world"]
+                ],
+                'p' => ['m' => 'hello'],
+                'pl' => [
+                    ['m' => 'hello'],
+                    ['m' => 'world']
+                ]
+            ], $exception->toArray(false));
+
+            $previous_list = $exception->getPreviousList();
+            $this->assertEquals("hello", $previous_list[0]->getMessage());
+            $this->assertEquals("world", $previous_list[1]->getMessage());
+
+        }
+
+    }
+
+    public function testTryExecuteWithMessage()
+    {
+        try {
+            Util::foreachTry(function(string $value) {
+                throw new Exception($value);
+            },
+                ["hello", "world"], "RANDOM_MESSAGE");
+
+            $this->fail("should throw");
+
+        } catch (ThrowableList $exception) {
+            $this->assertEquals([
+                'm' => "RANDOM_MESSAGE",
                 'd' => [
                     "element_list" => ["hello", "world"]
                 ],

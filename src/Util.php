@@ -85,10 +85,11 @@ class Util
      * Al final si han ocurrido 1 o más excepciones entonces lanza una {@see ThrowableList}, si no hay problemas retorna un array con los resultados.
      * @param $callback
      * @param array $element_list
+     * @param string $message
      * @return array
      * @throws ThrowableList
      */
-    public static function foreachTry($callback, array $element_list) : array {
+    public static function foreachTry($callback, array $element_list, string $message = "GENERIC_ERROR_LIST") : array {
         $result_list = [];
         $exception_list = [];
 
@@ -101,7 +102,7 @@ class Util
         }
 
         if ( !empty($exception_list) )
-            throw new ThrowableList('some exceptions thrown during try execution',
+            throw new ThrowableList($message,
                 [
                     'element_list' => $element_list,
                 ], $exception_list);
