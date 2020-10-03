@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 namespace labo86\exception_with_data;
 
+use JsonSchema\Exception\ExceptionInterface;
 use Throwable;
 
 class ExceptionForFrontEnd extends ExceptionWithData
@@ -34,7 +35,7 @@ class ExceptionForFrontEnd extends ExceptionWithData
     /**
      * Ver {@see Util::toArray()} para el detalle del contenido del arreglo
      * Se agrega el siguiente campo
-     *  - i : identificador {@see ThrowableList::getPreviousList()} El identificador de ésta excepción
+     *  - i : identificador {@see ExceptionForFrontEnd::getId()} El identificador de ésta excepción
      * @param bool $file_data
      * @return array
      */

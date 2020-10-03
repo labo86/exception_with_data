@@ -22,6 +22,7 @@ class Util
      *  - f : file el archivo y linea en que se lanzo esta excepción
      *  - p : previous {@see Throwable::getPrevious()} La excepción anterior serializada si aplica
      *  - pl : previous_list {@see ThrowableList::getPreviousList()} Una lista serializada de excepciones anteriores.
+     *  - i : identificador {@see ExceptionForFrontEnd::getId()} El identificador de ésta excepción
      * @param Throwable $throwable
      * @param bool $file_data si se incluye la linea y el archivo en que se lanzo la excepción
      * @return array
