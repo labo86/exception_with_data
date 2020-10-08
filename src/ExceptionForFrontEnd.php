@@ -66,11 +66,11 @@ class ExceptionForFrontEnd extends ExceptionWithData
      * @param Throwable $throwable
      * @return ExceptionForFrontEnd
      */
-    public static function normalize(Throwable $throwable, string $message = "GENERIC_ERROR") : ExceptionForFrontEnd {
+    public static function normalize(Throwable $throwable, MessageMapper $mapper) : ExceptionForFrontEnd {
         if ( $throwable instanceof ExceptionForFrontEnd ) {
             return $throwable;
         } else {
-            return new ExceptionForFrontEnd($message , [], $throwable);
+            return new ExceptionForFrontEnd($mapper->getMessage($throwable->getMessage()) , [], $throwable);
         }
     }
 

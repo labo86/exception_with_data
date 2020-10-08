@@ -6,6 +6,7 @@ namespace test\labo86\exception_with_data;
 use Exception;
 use labo86\exception_with_data\ExceptionForFrontEnd;
 use labo86\exception_with_data\ExceptionWithData;
+use labo86\exception_with_data\MessageMapperArray;
 use PHPUnit\Framework\TestCase;
 
 class ExceptionForFrontEndTest extends TestCase
@@ -13,7 +14,8 @@ class ExceptionForFrontEndTest extends TestCase
     public function testNormalizeOther() {
         $exception = new Exception("exception");
 
-        $exp_for_front_end = ExceptionForFrontEnd::normalize($exception);
+        $mapper = new MessageMapperArray([]);
+        $exp_for_front_end = ExceptionForFrontEnd::normalize($exception, $mapper);
 
         $this->assertEquals("GENERIC_ERROR", $exp_for_front_end->getMessage());
         $this->assertSame($exception, $exp_for_front_end->getPrevious());
@@ -24,7 +26,8 @@ class ExceptionForFrontEndTest extends TestCase
     public function testNormalizeOtherWithMessage() {
         $exception = new Exception("exception");
 
-        $exp_for_front_end = ExceptionForFrontEnd::normalize($exception, "OTHER_ERROR");
+        $mapper = new MessageMapperArray(['exception' => 'OTHER_ERROR']);
+        $exp_for_front_end = ExceptionForFrontEnd::normalize($exception, $mapper);
 
         $this->assertEquals("OTHER_ERROR", $exp_for_front_end->getMessage());
         $this->assertSame($exception, $exp_for_front_end->getPrevious());
@@ -35,7 +38,8 @@ class ExceptionForFrontEndTest extends TestCase
     public function testNormalizeSame() {
         $exception = new ExceptionForFrontEnd("exception");
 
-        $exp_for_front_end = ExceptionForFrontEnd::normalize($exception);
+        $mapper = new MessageMapperArray(['exception' => 'OTHER_ERROR']);
+        $exp_for_front_end = ExceptionForFrontEnd::normalize($exception, $mapper);
 
         $this->assertEquals("exception", $exp_for_front_end->getMessage());
         $this->assertSame($exception, $exp_for_front_end);
