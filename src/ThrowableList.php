@@ -4,6 +4,7 @@ declare(strict_types=1);
 namespace labo86\exception_with_data;
 
 
+use JetBrains\PhpStorm\ArrayShape;
 use Throwable;
 
 class ThrowableList extends ExceptionWithData
@@ -25,6 +26,7 @@ class ThrowableList extends ExceptionWithData
         return $this->previous_list;
     }
 
+    #[ArrayShape(['m' => "string", 'p' => "array", 'f' => "array", 'd' => "array", "pl" => "array"])]
     public function toArray(bool $file_data = true) : array {
         $array_data = parent::toArray($file_data);
 

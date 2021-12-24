@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 namespace labo86\exception_with_data;
 
+use JetBrains\PhpStorm\ArrayShape;
 use Throwable;
 
 /**
@@ -34,6 +35,7 @@ class Util
             return self::toArrayBasic($throwable, $file_data);
     }
 
+    #[ArrayShape(['m' => "string", 'p' => "array", 'f' => "array"])]
     public static function toArrayBasic(Throwable $throwable, bool $file_data = true) : array {
         $array_data = [
             'm' => $throwable->getMessage()
@@ -64,12 +66,12 @@ class Util
     public static function rethrow(string $message, array $data, Throwable $previous) : ExceptionWithData {
         if ( $previous instanceof ThrowableList ) {
             $new_message = empty($message) ? $previous->getMessage() : $message;
-            $new_data = array_merge($previous->getData(), $data);
+            $new_data = [...$previous->getData(), ...$data];
             return new ThrowableList($new_message, $new_data, $previous->getPreviousList());
         }
         else if ( $previous instanceof ExceptionWithData ) {
             $new_message = empty($message) ? $previous->getMessage() : $message;
-            $new_data = array_merge($previous->getData(), $data);
+            $new_data = [...$previous->getData(), ...$data];
             return new ExceptionWithData($new_message, $new_data, $previous->getPrevious() ?? $previous);
         } else {
             $new_message = empty($message) ? $previous->getMessage() : $message;

@@ -3,7 +3,8 @@ declare(strict_types=1);
 
 namespace labo86\exception_with_data;
 
-use JsonSchema\Exception\ExceptionInterface;
+use JetBrains\PhpStorm\ArrayShape;
+use JetBrains\PhpStorm\Pure;
 use Throwable;
 
 class ExceptionForFrontEnd extends ExceptionWithData
@@ -39,6 +40,7 @@ class ExceptionForFrontEnd extends ExceptionWithData
      * @param bool $file_data
      * @return array
      */
+    #[ArrayShape(['m' => "string", 'p' => "array", 'f' => "array", 'd' => "array", 'i' => "string"])]
     public function toArray(bool $file_data = true) : array {
         $array_data = parent::toArray($file_data);
 
@@ -51,6 +53,7 @@ class ExceptionForFrontEnd extends ExceptionWithData
      * Ver {@see ExceptionForFrontEnd::toArray()} para el detalle del contenido del arreglo
      * @return array
      */
+    #[Pure] #[ArrayShape(['m' => "string", 'd' => "array", 'i' => "string"])]
     public function getDataForUser() : array {
         return [
             'm' => $this->getMessage(),
@@ -64,6 +67,7 @@ class ExceptionForFrontEnd extends ExceptionWithData
      * Si el throwable ya es una ExceptionForFronEnd entonces la devuelve.
      * Esta función es util para esconder los mensajes críticos de la aplicación al usuario final
      * @param Throwable $throwable
+     * @param MessageMapper $mapper
      * @return ExceptionForFrontEnd
      */
     public static function normalize(Throwable $throwable, MessageMapper $mapper) : ExceptionForFrontEnd {

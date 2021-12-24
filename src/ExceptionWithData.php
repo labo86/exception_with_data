@@ -4,6 +4,7 @@ declare(strict_types=1);
 namespace labo86\exception_with_data;
 
 use Exception;
+use JetBrains\PhpStorm\ArrayShape;
 use Throwable;
 
 /**
@@ -49,6 +50,7 @@ class ExceptionWithData extends Exception
      * @param bool $file_data
      * @return array
      */
+    #[ArrayShape(['m' => "string", 'p' => "array", 'f' => "array", 'd' => "array"])]
     public function toArray(bool $file_data = true) : array {
         $array_data = Util::toArrayBasic($this, $file_data);
 
